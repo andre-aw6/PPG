@@ -1,5 +1,5 @@
 {
-  "name": "PPG",
+  "name": "Powerpuff",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,10 +13,12 @@
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
     "react": "17.0.2",
+    "react-htmltext": "^0.40.2",
     "react-native": "0.68.2",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-safe-area-view": "^1.1.1",
-    "react-native-screens": "^3.13.1"
+    "react-native-screens": "^3.13.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Button, Image } from "react-native";
+import { Sview, Stitle, Stext, Simage, Stview } from "./styles";
 
 const Show = () => {
 const [loading, setLoading] = useState(false);
@@ -20,12 +21,15 @@ useEffect(()=>{
   requestInfo();
 },[])
 
+
   return (
-    <View>
-      <Image source={{uri: info.image?.medium}} style={{width: 200, height: 100}} />
-      <Text>Title: {info.name}</Text>
-      <Text>Description: {info.summary}</Text>
-    </View>
+    <Sview>
+      <Simage source={{uri: info.image?.medium}} />
+      <Stitle>{info.name}</Stitle>
+      <Stview>
+      <Stext> {info.summary}</Stext>
+      </Stview>
+    </Sview>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Text, View, TouchableHighlight, Image, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Elist, Eview } from "./styles";
 
 import { LoaderContext } from "../../../contexts/LoaderContext";
 
@@ -27,21 +28,23 @@ export default function Episodes () {
  
 
   return (
-    <View>
+    <Eview>
       <FlatList
         data={episodes}
 
         
         renderItem={({item})=>(
+          <Elist>
           <TouchableHighlight {...item} onPress={() => {navigation.navigate('Details', item)}} >
           <>
           <Image source={{uri: item.image?.medium}} style={{width: 100, height: 50}} />
           <Text>{item.name}</Text>
           </>
           </TouchableHighlight>
+          </Elist>
         )}
         keyExtractor={item => item.id}
       />
-    </View>
+    </Eview>
   );
 }
