@@ -1,17 +1,21 @@
-import React from "react";
 import styled from 'styled-components';
 
 export const Eview = styled.View`
+width: 100%;
 background-color: #d85dc9; 
-align-items: center;
-padding: 10px;
 `;
 export const Elist = styled.View`
-width: 100%;
+flex: 1;
+height: 100px;
+flex-direction: row;
+vertical-align: center;
+justify-content:space-between;
 background-color: #faebf8;
-margin-vertical: 8px;
-
-
+margin-top: 10px;
+margin-horizontal:8px;
+padding-vertical: 10px;
+padding-horizontal: 6px;
+border-radius: 6px;
 `;
 export const Etitle = styled.Text`
 font-size: 20px;
@@ -19,15 +23,14 @@ color: #ffffff;
 font-weight: bold;
 `;
 export const Etext = styled.Text`
-text-align: justify;
-font-size: 16px;
-color: #ffffff;
+font-size: 20px;
+color: #52154b;
 font-weight: bold;
 `;
 export const Eimage = styled.Image`
-width: 200px;
-height: 100px;
-border-color: #ffffff;
-border-radius: 8px;
-shadow-color: #000000;
+width: 48px;
+height: 48px;
+border-radius: 6px;
+margin-vertical:12px;
+margin-left:12px;
 `;

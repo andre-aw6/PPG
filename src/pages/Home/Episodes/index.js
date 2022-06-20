@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Text, View, TouchableHighlight, Image, FlatList } from "react-native";
+import { FlatList, TouchableHighlight } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Elist, Eview } from "./styles";
+import { Eimage, Elist, Etext, Eview } from "./styles";
 
 import { LoaderContext } from "../../../contexts/LoaderContext";
 
@@ -30,18 +30,19 @@ export default function Episodes () {
   return (
     <Eview>
       <FlatList
+       
         data={episodes}
 
         
         renderItem={({item})=>(
+          
+          <TouchableHighlight {...item} onPress={() => {navigation.navigate('Details', item)}} underlayColor="#e79add" activeOpacity={0.8}>
           <Elist>
-          <TouchableHighlight {...item} onPress={() => {navigation.navigate('Details', item)}} >
-          <>
-          <Image source={{uri: item.image?.medium}} style={{width: 100, height: 50}} />
-          <Text>{item.name}</Text>
-          </>
-          </TouchableHighlight>
+          <Eimage source={{uri: item.image?.medium}} />
+          <Etext>{item.name}</Etext>
           </Elist>
+          </TouchableHighlight>
+          
         )}
         keyExtractor={item => item.id}
       />

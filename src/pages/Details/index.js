@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Button, Image } from 'react-native';
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { Dtext, Dtitle, Dview, Dimage, Dtview } from "./styles";
+import { Button } from "react-native";
 
 
 
@@ -28,18 +29,22 @@ export default function Details() {
         requestInfo();
       },[])
 
-      const navigation = useNavigation();
+    const navigation = useNavigation();
 
-      const handleBackButton = () => {
-          navigation.navigate('Home');
-      }
+     
 
     return (
-        <View>
-          <Image source={{uri: info.image?.medium}} style={{width: 200, height: 100}} />
-           <Text>Title: {info.name}</Text>
-          <Text>Description: {info.summary}</Text>
-          <Button title="Back" onPress={handleBackButton}/>
-        </View>
+        <Dview>
+          <Dimage source={{uri: info.image?.medium}} />
+           <Dtitle>{info.name}</Dtitle>
+           <Dtview>
+              <Dtext>{info.summary}</Dtext>
+            </Dtview>
+           
+            <Button color="#ffffff" title='Home' onPress={() => {navigation.navigate('Home')}}  />
+           
+          
+            
+        </Dview>
       );
 }

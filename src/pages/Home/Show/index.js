@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Button, Image } from "react-native";
 import { Sview, Stitle, Stext, Simage, Stview } from "./styles";
 
 const Show = () => {
